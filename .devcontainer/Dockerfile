@@ -22,4 +22,4 @@ ENV NIX_DOCKER_URL="https://github.com/${NIX_RELEASE_SCOPE}/${NIX_RELEASE_NAME}/
 RUN mkdir -p ${NIX_DOCKER_DIR}
 RUN curl -SL ${NIX_DOCKER_URL}/${NIX_DOCKER_TAG}.tar.gz \
     | tar --strip-components=1 -C ${NIX_DOCKER_DIR} -xz ${NIX_RELEASE_NAME}-${NIX_DOCKER_TAG} 
-RUN . ${NIX_DOCKER_DIR}/shim.sh
+RUN bash -c ". ${NIX_DOCKER_DIR}/shim.sh"
