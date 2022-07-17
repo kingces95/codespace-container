@@ -13,3 +13,8 @@ sudo mount --bind "/workspaces/" "${NIX_CHROOT}/workspaces/"
 sudo mount --bind "/proc/" "${NIX_CHROOT}/proc/"
 sudo mount --bind "/dev/pts/" "${NIX_CHROOT}/dev/pts/"
 mount -l | grep chroot
+
+ # https://superuser.com/questions/1732113/how-do-i-debug-a-mount-failure-with-permission-denied-even-tho-i-running-with-su
+ mkdir foo bar
+ sudo mount --bind ~/foo/ ~/bar/
+
