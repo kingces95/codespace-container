@@ -4,14 +4,14 @@
 	"name": "Ubuntu",
 	"build": {
 		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick an Ubuntu version: jammy / ubuntu-22.04, focal / ubuntu-20.04, bionic /ubuntu-18.04
-		// Use ubuntu-22.04 or ubuntu-18.04 on local arm64/Apple Silicon.
 		"args": { 
-            "VARIANT": "ubuntu-22.04",
-            "RELEASE_DIR": "/docker/release",
-            "RELEASE_SCOPE": "kingces95",
-            "RELEASE_NAME": "codespace-container",
-            "RELEASE_TAG": "0.1.0"
+            "NIX_USER": "vscode",
+            "NIX_SHIM_VARIANT": "jammy",
+            "NIX_SHIM_IMAGE": "mcr.microsoft.com/vscode/devcontainers/base:0",
+            "NIX_SHIM_GITHUB_SCOPE": "kingces95",
+            "NIX_SHIM_GITHUB_NAME": "codespace-container",
+            "NIX_SHIM_GITHUB_TAG": "0.1.0",
+            "NIX_SHIM_TOOLS": "binutils debootstrap"
         }
 	},
 
