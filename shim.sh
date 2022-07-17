@@ -13,3 +13,10 @@ sudo mount --bind "/workspaces/" "${NIX_CHROOT}/workspaces/"
 sudo mount --bind "/proc/" "${NIX_CHROOT}/proc/"
 sudo mount --bind "/dev/pts/" "${NIX_CHROOT}/dev/pts/"
 mount -l | grep chroot
+
+mkdir foo bar
+sudo mount --bind ./foo/ ./bar/
+
+
+sudo passwd root
+su root
